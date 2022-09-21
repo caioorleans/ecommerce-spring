@@ -4,9 +4,11 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import ecommerce.model.cartao.Cartao;
 
@@ -17,7 +19,7 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String email;
 	
 	@Column(nullable = false)
@@ -26,7 +28,10 @@ public class Cliente {
 	@Column(nullable = false)
 	private String nome;
 	
+	@OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
 	private List<Endereco> enderecos;
+	
+	@OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
 	private List<Cartao> cartoes;
 	
 	public Integer getId() {

@@ -7,6 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+import ecommerce.model.Cliente;
 
 @Entity
 public class Cartao {
@@ -14,6 +18,11 @@ public class Cartao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
+	@Column(nullable = false)
+	@OneToOne
+	@JoinColumn(name = "id_cliente")
+	private Cliente cliente;
 	
 	@Column(nullable = false)
 	private Long numero;

@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Endereco {
@@ -12,6 +14,10 @@ public class Endereco {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_cliente")
+	private Cliente cliente;
 	
 	@Column(nullable = false)
 	private String cep;
@@ -39,6 +45,14 @@ public class Endereco {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	public String getCep() {
