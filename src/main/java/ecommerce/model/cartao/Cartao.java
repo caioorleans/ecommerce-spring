@@ -19,7 +19,6 @@ public class Cartao {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(nullable = false)
 	@OneToOne
 	@JoinColumn(name = "id_cliente")
 	private Cliente cliente;

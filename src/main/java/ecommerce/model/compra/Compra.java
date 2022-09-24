@@ -22,12 +22,10 @@ public class Compra {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(nullable = false)
 	@ManyToOne
 	@JoinColumn(name = "id_cliente")
 	private Cliente cliente;
 	
-	@Column(nullable = false)
 	@ManyToOne
 	@JoinColumn(name = "id_endereco")
 	private Endereco enderecoEntrega;

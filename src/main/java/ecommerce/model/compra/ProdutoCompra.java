@@ -22,7 +22,6 @@ public class ProdutoCompra {
 	@JoinColumn(name = "id_compra")
 	private Compra compra;
 	
-	@Column(nullable = false)
 	@ManyToOne
 	@JoinColumn(name = "id_produto")
 	private Produto produto;
