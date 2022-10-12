@@ -15,9 +15,11 @@ import ecommerce.controller.mapper.CategoriaMapper;
 import ecommerce.dto.CategoriaDTO;
 import ecommerce.model.Categoria;
 import ecommerce.service.CategoriaService;
+import io.swagger.annotations.Api;
 
 @RestController
 @RequestMapping("categorias")
+@Api(tags = "Categoria Controller")
 public class CategoriaController {
 	
 	private final CategoriaService service;

@@ -19,6 +19,9 @@ public class Produto {
 	private String nome;
 	
 	@Column(nullable = false)
+	private String imagem;
+	
+	@Column(nullable = false)
 	private String descricao;
 	
 	@ManyToOne
@@ -45,6 +48,14 @@ public class Produto {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
 	}
 
 	public String getDescricao() {
