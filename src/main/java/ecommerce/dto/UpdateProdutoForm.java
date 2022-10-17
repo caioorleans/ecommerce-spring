@@ -1,14 +1,20 @@
 package ecommerce.dto;
 
-public class ProdutoForm {
-	
+public class UpdateProdutoForm {
+
+	private Integer id;
 	private String nome;
 	private String imagem;
 	private String descricao;
 	private Double preco;
-	private Integer quantidadeEstoque;
 	private Integer categoriaId;
 	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -32,12 +38,6 @@ public class ProdutoForm {
 	}
 	public void setPreco(Double preco) {
 		this.preco = preco;
-	}
-	public Integer getQuantidadeEstoque() {
-		return quantidadeEstoque;
-	}
-	public void setQuantidadeEstoque(Integer quantidadeEstoque) {
-		this.quantidadeEstoque = quantidadeEstoque;
 	}
 	public Integer getCategoriaId() {
 		return categoriaId;
